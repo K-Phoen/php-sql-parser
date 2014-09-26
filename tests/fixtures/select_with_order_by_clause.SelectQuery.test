@@ -1,0 +1,1 @@
+SELECT name FROM test ORDER BY age ASC, name DESC, test.location

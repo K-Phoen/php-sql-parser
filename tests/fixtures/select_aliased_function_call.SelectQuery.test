@@ -1,0 +1,1 @@
+SELECT UPPER('joe') AS titi FROM test

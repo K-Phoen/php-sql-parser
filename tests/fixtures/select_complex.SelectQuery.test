@@ -1,0 +1,1 @@
+SELECT UPPER(person.name) AS upper_name, person.location, age, 'test' FROM test

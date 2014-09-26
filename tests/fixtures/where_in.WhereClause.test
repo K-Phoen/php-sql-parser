@@ -1,0 +1,1 @@
+WHERE person.location IN ('Birmingham', 'Coventry')

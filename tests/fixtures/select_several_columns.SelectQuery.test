@@ -1,0 +1,1 @@
+SELECT person.job, location FROM person

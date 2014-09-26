@@ -1,0 +1,1 @@
+UPDATE person SET age = age + 10 WHERE age < 10

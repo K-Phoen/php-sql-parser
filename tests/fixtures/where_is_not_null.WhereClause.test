@@ -1,0 +1,1 @@
+WHERE person.job IS NOT NULL

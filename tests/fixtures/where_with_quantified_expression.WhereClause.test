@@ -1,0 +1,1 @@
+WHERE age > ALL (SELECT age FROM person WHERE name = 'Joe')

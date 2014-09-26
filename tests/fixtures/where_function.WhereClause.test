@@ -1,0 +1,1 @@
+WHERE LENGTH('test') = 4

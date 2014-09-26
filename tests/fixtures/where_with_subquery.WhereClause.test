@@ -1,0 +1,1 @@
+WHERE age > (SELECT MAX(age) FROM person)

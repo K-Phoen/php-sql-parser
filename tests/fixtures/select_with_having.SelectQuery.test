@@ -1,0 +1,1 @@
+SELECT COUNT(1) AS total FROM person GROUP BY name HAVING total > 5

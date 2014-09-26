@@ -1,0 +1,1 @@
+WHERE NOT LENGTH('test') = 4

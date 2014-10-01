@@ -42,6 +42,14 @@
 %token true         TRUE
 %token false        FALSE
 
+%token join         JOIN
+%token inner        INNER
+%token outer        OUTER
+%token left         LEFT
+%token right        RIGHT
+%token full         FULL
+%token on           ON
+
 // aggregate functions
 %token avg          AVG
 %token max          MAX
@@ -90,9 +98,31 @@ Literal:
 #DatabaseIdentifier:
     Identifier()
 
+#TablePrimaryIdentifier:
+        Identifier() (::as:: Identifier())?
+    |   DatabaseIdentifier() ::period:: Identifier() (::as:: Identifier())?
+
+#OuterJoinType:
+    <left> | <right> | <full>
+
+#JoinType:
+    <inner> | OuterJoinType() <outer>?
+
+#JoinCondition:
+    ::on:: SimpleConditionalExpression()
+
+#JoinSpecification:
+    JoinCondition()
+
+#QualifiedJoin:
+    TablePrimaryIdentifier() JoinType()? ::join:: TablePrimaryIdentifier() JoinSpecification()
+
+#JoinedTable:
+    QualifiedJoin()
+
 #TableIdentifier:
-        Identifier()
-    |   DatabaseIdentifier() ::period:: Identifier()
+        TablePrimaryIdentifier()
+    |   JoinedTable()
 
 #ColumnIdentifier:
         Identifier()

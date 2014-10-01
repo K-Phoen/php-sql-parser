@@ -1,0 +1,1 @@
+SELECT name, location FROM toto LEFT JOIN tata ON toto.name = tata.lala
